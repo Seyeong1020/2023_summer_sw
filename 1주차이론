@@ -1,0 +1,277 @@
+변수
+
+자바스크립트에서 변수를 선언할 시,
+
+변하지 않는 값은 const, 변할 수 있는 값은 let으로 선언함
+
+-> 그냥 다 const 하고 추후 바뀔 가능성이 있는 애들은 let으로 바꾸는 식으로 해도 
+
+​
+
+ex.
+
+const PI = 3.141592;   //이렇게 작성할 시 변수값 수정 불가능
+
+let name = "seyeong";  
+
+//이렇게 작성할 시 다른 누군가가 let name = "ohseyeong" 라고하면 알림이 뜸 But 수정 가능
+
+
+​
+
+​
+
+* 변수 선언할 때 고려할 점
+
+변수는 문자와 숫자, $와 _만 사용
+
+첫글자는 숫자 안됨
+
+예약어는 사용할 수 없음 ex. const, let 즉, let let = 30; 이런거 안됨
+
+가급적 상수는 대문자로
+
+변수명은 읽기 쉽고 이해할 수 있게 선언
+
+자료형
+
+1. 문자형 String
+
+​
+
+const name1 = "Mike";
+
+const name2 = 'Mike';
+
+const name3 = `Mike`;
+
+​
+
+const message = "I'm a boy.";  //큰 따옴표로 감쌀 시 안에 작은 따옴표 쓰기가 용이함
+
+const message2 = 'I\'m a boy.';  
+
+//작은 따옴표끼리만 쓰고 싶으면 안에 작은 따옴표 필요할 때 \(역슬래쉬)붙이면 됨
+
+​
+
+const message3 = `My name is &{name}`;  //이거 쓰면 안에 변수 넣기 좋음
+
+console.log(message3)
+
+=> "My name  is Mike"
+
+const message4 = `나는 ${30+1}살 입니다.`;
+
+​
+
+근데
+
+ const message5 = "My name is ${name}" 이렇게 ` 이거 말고 큰 따옴표를 사용하게 되면
+
+console.log(message5)
+
+=> "My name is ${name}" 이렇게 그대로 나오니까 주의
+
+
+​
+
+const name = "Mike";
+
+const a = "나는 ";
+
+const b = " 입니다.";
+
+console.log(a + name + b);  //문자형도 + 사용 가능
+
+=> "나는 Mike 입니다."  
+
+// 숫자형과 문자형을 섞을 수도 있는데, 이럴 때는 다 문자형으로 바뀜
+
+​
+
+2. 숫자형 Number
+
+​
+
+사칙연산 그거는 C언어랑 똑같음
+
++, - , *, /, %
+
+​
+
+const x = 1/0;
+
+console.log(x) 
+
+=> Infinity
+
+​
+
+const name = "Mike";
+
+const y = name/2;
+
+console.log(y);
+
+=> NaN (Not a Number)
+
+​
+
+3. Boolean
+
+const a = true;  //참
+
+const b = false;  //거짓
+
+​
+
+const name = "Mike";
+
+const age = 30;
+
+console.log(name=="Mike")
+
+=> true
+
+console.log(age>40)
+
+=> false
+
+​
+
+4. null / undefined
+
+let age;
+
+console.log(age)
+
+=> undefined  //변수 선언하고 값 할당 안하면 이렇게됨
+
+​
+
+let user = null;  //user 존재하지 않는다
+
+​
+
+5. typeof 연산자 
+
+변수의 자료형을 알아낼 수 있음
+
+자기 자신이 쓴 코드에는 쓸 일 거의 없지만, 다른 사람이 쓴 코드 안에서 변수가 어떤 타입인지 알아야하거나, 
+
+API의 데이터를 변수형에 따라 다르게 처리해야할 때 사용
+
+​
+
+const name = "Mike";
+
+​
+
+console.log(typeof 3);
+
+=> "number"
+
+console.log(typeof name);
+
+=> "string"
+
+console.log(typeof true);
+
+=> "boolean"
+
+console.log(typeof "xxx");
+
+=> "string"
+
+console.log(typeof null);
+
+=> "object"  //objest -> 객체형을 의미, 근데 null은 객체 아님
+
+console.log(typeof undefined);
+
+=> "undefined"
+
+​
+
+alert, prompt, confirm
+
+alert - 알려줌
+
+prompt - 입력 받음
+
+confirm - 확인 받음
+
+​
+
+1. alert
+
+ alert()
+
+​
+
+알림창이 뜨고 확인 버튼 누를 때까지 계속 떠있음
+
+상호작용을 한다기 보다는 일방적으로 알릴 때 사용
+
+​
+
+ex. 비밀번호가 틀렸습니다.
+
+​
+
+2. prompt
+
+1 const name = prompt("이름을 입력하세요.");  //입력 안하고 확인해버리면 null 뜸
+
+2 alert("환영합니다, " + name + "님");
+
+3 alert(`환영합니다, ${name}님`);
+
+2번 라인 3번 라인 똑같은거임
+
+​
+
+const name = prompt("예약일을 입력해주세요.", "2023-5-");
+
+// prompt는 인수 두 개 가질 수 있음
+
+// 첫번째 "예약일을 입력해주세요"는 알림창 메세지
+
+// 두번째 "2023-05-"는 입력창의 default 값이 되어서 입력할 때 힌트를 주거나 어떠한 형식으로 써야하는지
+
+ 알려줄 때 용이함
+
+
+취소 누르면 null 할당
+
+​
+
+3. confirm
+
+사용자에게 확인을 받기 위한 용도
+
+const isAdult = confirm("당신은 성인입니까?");
+
+console.log(isAdult)
+
+
+alert 창과 다르게 확인/ 취소 존재
+
+확인 : isAdult에 true 할당
+
+취소 : isAdult에 false 할당
+
+​
+
+ex. 결제 하시겠습니까? 정말 삭제 하시겠습니까? 이런거 할 때 사용
+
+​
+
+=> alert, prompt, confirm 빠르고 간단하게 적용할 수 있어서 많이 사용하지만, 단점 있음
+
+창이 떠있는 동안 스크립트 일시 정지
+
+스타일링 불가능(위치 모양 바꿀 수 없음)
+
+​
