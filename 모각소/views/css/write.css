@@ -1,4 +1,3 @@
-/* styles.css */
 body {
     background-image: url('images/main.jpg');
     background-size:cover;
@@ -26,7 +25,6 @@ ul {
     gap: 20px;
 }
 
-
 li a {
     color: #333;
     text-decoration: none;
@@ -35,52 +33,44 @@ li a {
 }
 
 li a:hover {
-    color: #3498db;
+    color: green;
 }
 
 .main-content {
     text-align: center;
-    padding: 5px;
-    color: #fff;
+    padding: 100px 0;
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 2em;
 }
 
 .write-form {
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
-input,
-textarea {
+.write-form input,
+.write-form textarea {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin-bottom: 15px;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f5f5f5;
-    color: #333;
 }
 
-button {
-    padding: 12px 20px;
-    background-color: green ;
-    color: #fff;
+.write-form button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #0f6520;
-}
-.images-container > img {
-    width: 700px;
-    height: auto;
-    border-radius: 10%;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+.write-form button:hover {
+    background-color: #2980b9;
 }
