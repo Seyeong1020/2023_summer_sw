@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/edit_post.css">
+    <title>Write Post</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/menu">MENU</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-content">
+        <h1>수정</h1>
+        <form action ="/posts/<%= post.id %>/edit" class="write-form" method="post">
+            <input type="text" placeholder="Title" required name="title">
+            <textarea placeholder="Write your post here" required name="content"></textarea>
+            <button type="submit">수정완료</button>
+        </form>
+    </div>
+</body>
+</html>
