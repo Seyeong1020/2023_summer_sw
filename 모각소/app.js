@@ -146,7 +146,7 @@ app.post('/signup', (req, res) => {
       res.status(500).send('Error creating user');
       return;
     }
-    res.send('User created successfully');
+    res.render('mainpage(logout)')
   });
 });
 
